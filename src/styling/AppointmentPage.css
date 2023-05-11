@@ -1,0 +1,44 @@
+/* AppointmentPage.css */
+
+.appointment-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    margin-top: 50px;
+    font-size: 2.5rem;
+  }
+  
+  table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .appointment-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .appointment-button:hover {
+    background-color: #3e8e41;
+  }
+  

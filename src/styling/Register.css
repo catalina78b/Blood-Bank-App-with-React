@@ -1,0 +1,89 @@
+.register-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background-color: white;
+  }
+  
+  .card-container {
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a box shadow effect */
+    transition: box-shadow 0.3s ease-in-out; /* add a smooth transition effect */
+  }
+  
+  .card-container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* increase the shadow on hover */
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 65vh;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-container label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .form-container input {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #d8d8d8;
+  }
+  
+  .form-container select {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #d8d8d8;
+  }
+  
+  .form-container .button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .register-button[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(180, 7, 30);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .register-button[type="submit"]:hover {
+    background-color: #333;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  

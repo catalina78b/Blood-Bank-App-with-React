@@ -1,0 +1,56 @@
+.main-page-container {
+    background-image:url('../../public/blood.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 60px;
+    width: auto;
+    text-align: center;
+    color:rgba(226, 123, 123, 0.73);
+    font-family: "Trebuchet MS", sans-serif;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .login-button {
+    background-color: rgb(180, 7, 30);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .login-button:hover {
+    background-color: #700013;
+  }
+
+  .register-button {
+    background-color: rgb(180, 7, 30);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .register-button:hover {
+    background-color: #700013;
+  }
+  
