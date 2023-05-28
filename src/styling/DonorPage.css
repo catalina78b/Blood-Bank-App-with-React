@@ -114,5 +114,21 @@
   .selected-center-container p:last-child {
     margin-bottom: 0;
   }
-  
-  
+ 
+  .modal-button {
+    background: linear-gradient(45deg, #ff69b4, #ff145a,#f50049); /* Red-pinkish ombre */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .modal-button:hover {
+    opacity: 0.8; /* Reduce opacity on hover for visual feedback */
+  }
+  .warning-text {
+    color: red;
+    font-family: Arial, sans-serif;
+  }

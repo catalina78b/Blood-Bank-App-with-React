@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styling/DonorPage.css';
 import { useNavigate, useParams} from 'react-router-dom';
+import Modal from 'react-modal';
 
 const DONOR_BASE_REST_API_URL = 'http://localhost:8080/api/donors';
 
@@ -12,12 +13,13 @@ const DonorPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const { id } = useParams();
+  const [modalIsOpen, setModalIsOpen] = useState(false); // State for controlling the modal
 
   const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoading(true);
-    axios.get('http://localhost:8080/api/donation-centers')
+    axios.get('http://localhost:8080/api/donation-centers/'+id)
       .then(response => {
         setDonationCenters(response.data);
         setIsLoading(false);
@@ -26,7 +28,7 @@ const DonorPage = () => {
         setError(error.message);
         setIsLoading(false);
       });
-  }, []);
+  }, [id]);
 
 
   const handleSelectCenter = (center) => {
@@ -37,18 +39,20 @@ const DonorPage = () => {
   };
 
   const makeAppointment = () => {
-    if (selectedCenter) {
+    if (selectedCenter && selectedCenter.functional) {
       navigate('/add-appointment', { 
         state: { 
           donorId: id, 
           donationCenter: selectedCenter
         } 
-      });
-    } else {
+      });}
+    else if (selectedCenter && !selectedCenter.functional) {
+      setModalIsOpen(true);}
+    else {
       // Show an error message if no center is selected
       setError('Please select a donation center.');
     }
-  };
+  }
   
   const deleteAccount = async () => {
     try {
@@ -113,6 +117,42 @@ const DonorPage = () => {
           <p>Select a donation center from the table to view more details.</p>
         )}
       </div>
+      <Modal
+  isOpen={modalIsOpen}
+  onRequestClose={() => setModalIsOpen(false)}
+  style={{
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(255, 0, 0, 0.5)', // Red background with transparency
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    content: {
+      position: 'absolute',
+      top: '90',
+      left: '90',
+      right: '90',
+      bottom: '90',
+      border: 'none',
+      background: 'pink', // Pink background color
+      overflow: 'auto',
+      WebkitOverflowScrolling: 'touch',
+      borderRadius: '10px',
+      outline: 'none',
+      padding: '20px',
+    },
+  }}
+>
+<h2 className="warning-text">Not in function!</h2>
+<p className="warning-text">This center is no longer functional. Please select another one!</p>
+  <button className="modal-button" onClick={() => setModalIsOpen(false)}>OK</button>
+</Modal>
+
     </div>
   );
 };

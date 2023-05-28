@@ -33,19 +33,11 @@ const AddDoctorComponent = () => {
       fetchDonationCenters();
     }, []);
 
-function handleDonationCenterChange(event) {
-  const selectedName = event.target.value;
-  const selectedCenter = donationCenters.find(center => center.centerName === selectedName);
-
-  if (selectedCenter) {
-    setDonationCenterId(selectedCenter.id);
-    setSelectedDonationCenterId(selectedCenter.id);
-    console.log(selectedDonationCenterId);
-  } else {
-    console.error(`Could not find donation center with name ${selectedName}`);
-  }
-}
-
+    function handleDonationCenterChange(event) {
+      const selectedId = event.target.value;
+      setDonationCenterId(selectedId);
+    }
+    
   
     useEffect(() => {
         if(id)
@@ -182,7 +174,7 @@ function handleDonationCenterChange(event) {
                                 <select id="donation-center-dropdown" onChange={handleDonationCenterChange}>
                                 <option value="">--Select a center--</option>
                                     {donationCenters && donationCenters.map(center => (
-                                          <option key={center.id} value={center.centerName}>{center.centerName}</option>
+                                          <option key={center.id} value={center.id}>{center.centerName}</option>
                                     ))}
                                </select>
                                </div>

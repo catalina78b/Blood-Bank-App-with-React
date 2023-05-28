@@ -8,7 +8,7 @@ import DoctorPage from "./pages/DoctorPage"
 import DonorPage from "./pages/DonorPage"
 import AddDoctorComponent from "./components/AddDoctorsComponent"
 import EditDonorComponent from "./components/EditDonorComponent"
-import AppointmentComponent from "./components/AppointmentComponent"
+import MakeAppointmentComponent from "./components/MakeAppointmentComponent"
 import AppointmentsPage from "./pages/AppointmentsPage"
 
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="/doctor/:id" element = {<DoctorPage />} />
         <Route path="/donor/:id" element={<DonorPage />} />
         <Route path="/edit-donor/:id" element={<EditDonorComponent />} />
-        <Route path="/add-appointment" element={<AppointmentComponent />}/>
+        <Route path="/add-appointment" element={<MakeAppointmentComponent />}/>
         <Route path="/appointments/:id" element={<AppointmentsPage />} />AppointmentsPage
       </Routes>
     </BrowserRouter>

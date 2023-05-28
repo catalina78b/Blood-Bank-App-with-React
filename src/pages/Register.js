@@ -24,7 +24,8 @@ const Register = () => {
       county, 
       bloodType 
     }).then(response => {
-      if (response.data.accountCreated) 
+      console.log(response.data);
+      if (response.data) 
         {setError('');
         setMessage('Account created!');}
       else
@@ -71,8 +72,9 @@ const Register = () => {
               <option value="AB+">AB+</option>
               <option value="AB-">AB-</option>
             </select>
-            {error && message==='' && <div className="error-message">{error}</div>}
-            {message && <div className="success-message">{message} Please <a href="/login">log in</a>!</div>}
+            {error && !message && <div className="error-message">{error}</div>}
+            {message && ( <div className="success-message">{message} Please <a href="/login">log in</a>!</div>)}
+
             <div className="button-container">
               <button type="submit" className="register-button">Register</button>
             </div>
